@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entity" >
+	<class name="PurchaseOrder" table="purchaseorder" >
+		<id name="Materials_id" column="Materials_id" type="java.lang.Integer" >
+			<generator class="native"/>
+		</id>
+		<property name="Provider_id" column="Provider_id" type="java.lang.Integer" />		
+		<property name="PurchaseOrder_id" column="PurchaseOrder_id" type="java.lang.Integer" />
+		<property name="PurchaseOrder_beginTime" column="PurchaseOrder_beginTime" type="timestamp" />
+		<property name="PurchaseOrder_totalprice" column="PurchaseOrder_totalprice" type=" java.lang.float" />
+		<property name="PurchaseOrder_amount" column="PurchaseOrder_amount" type="java.lang.Integer" />
+	</class>
+</hibernate-mapping>

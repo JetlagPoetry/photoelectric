@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entity.materials" >
+	<class name="Materials" table="materials" >
+		<id name="Materials_id" column="Materials_id" type="java.lang.Integer" >
+			<generator class="native"/>
+		</id>
+		<property name="Materials_name" column="Materials_name" type="java.lang.String" />		
+		<property name="Materials_notes" column="Materials_notes" type="java.lang.String" />
+		<property name="Materials_minPur" column="Materials_minPur" type="java.lang.Integer" />
+		<property name="Materials_isLack" column="Materials_isLack" type="java.lang.Integer" />
+		<property name="Materials_remains" column="Materials_remains" type="java.lang.Integer" />
+		<property name="Materials_allowed" column="Materials_allowed" type="java.lang.Integer" />
+	
+	</class>
+</hibernate-mapping>

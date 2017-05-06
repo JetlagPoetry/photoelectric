@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entity.wip" >
+	<class name="VirtualWipStore" table="virtualwipstore" >
+		<id name="VirtualWipStore_RepositoryID" column="VirtualWipStore_RepositoryID" type="java.lang.Integer" >
+			<generator class="native"/>
+		</id>
+		<property name="VirtualWipStore_WipID" column="VirtualWipStore_WipID" type="java.lang.Integer" />		
+		<property name="VirtualWipStore_OrderID" column="VirtualWipStore_OrderID" type="java.lang.Integer" />
+		<property name="VirtualWipStore_WipNum" column="VirtualWipStore_WipNum" type="java.lang.Integer" />
+	</class>
+</hibernate-mapping>

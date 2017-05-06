@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entity.ots" >
+	<class name="OtsStore" table="otsstore" >
+		<id name="OtsStore_RepositoryID" column="OtsStore_RepositoryID" type="java.lang.Integer" >
+			<generator class="native"/>
+		</id>
+		<property name="OtsStore_OtsID" column="OtsStore_OtsID" type="java.lang.Integer" />		
+		<property name="OtsStore_OtsNum" column="OtsStore_OtsNum" type="java.lang.Integer" />
+	</class>
+</hibernate-mapping>

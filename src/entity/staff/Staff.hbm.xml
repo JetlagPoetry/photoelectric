@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entity.staff" >
+	<class name="Staff" table="staff" >
+		<id name="Staff_id" column="Staff_id" type="java.lang.Integer" >
+			<generator class="native"/>
+		</id>
+		<property name="Staff_name" column="Staff_name" type="java.lang.String" />		
+		<property name="Staff_gender" column="Staff_gender" type="java.lang.String" />
+		<property name="Staff_title" column="Staff_title" type="java.lang.String" />
+		<property name="Staff_contact" column="Staff_contact" type="java.lang.String" />
+		<property name="Staff_priority" column="Staff_priority" type="java.lang.Integer" />
+		<property name="Staff_department" column="Staff_department" type="java.lang.Integer" />
+		<property name="Staff_station" column="Staff_station" type="java.lang.Integer" />
+	</class>
+</hibernate-mapping>

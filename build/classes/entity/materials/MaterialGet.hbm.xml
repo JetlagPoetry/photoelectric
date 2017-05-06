@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entity.materials" >
+	<class name="MaterialGet" table="material_get" >
+		<id name="Materials_id" column="Materials_id" type="java.lang.Integer" >
+			<generator class="native"/>
+		</id>
+		<property name="Station_id" column="Station_id" type="java.lang.Integer" />		
+		<property name="StationGetMaterials_time" column="StationGetMaterials_time" type="timestamp" />
+		<property name="StationGetMaterials_amount" column="StationGetMaterials_amount" type="java.lang.Integer" />
+		<property name="StationGetMaterials_location" column="StationGetMaterials_location" type="java.lang.Integer" />
+		<property name="StationGetMaterials_status" column="StationGetMaterials_status" type="java.lang.Integer" />
+	</class>
+</hibernate-mapping>

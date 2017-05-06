@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entity.wip" >
+	<class name="Wip" table="wip" >
+		<id name="Wip_id" column="Wip_id" type="java.lang.Integer" >
+			<generator class="native"/>
+		</id>
+		<property name="Wip_name" column="Wip_name" type="java.lang.String" />		
+		<property name="Wip_notes" column="Wip_notes" type="java.lang.String" />
+		<property name="Wip_remains" column="Wip_remains" type="java.lang.Integer" />
+		<property name="Wip_allowed" column="Wip_allowed" type="java.lang.Integer" />
+		<property name="Wip_isLack" column="Wip_isLack" type="java.lang.Integer" />
+	</class>
+</hibernate-mapping>

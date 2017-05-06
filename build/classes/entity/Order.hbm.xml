@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="entity" >
+	<class name="Order" table="order" >
+		<id name="Order_id" column="Order_id" type="java.lang.Integer" >
+			<generator class="native"/>
+		</id>
+		<property name="Order_beginTime" column="Order_beginTime" type="timestamp" />		
+		<property name="Order_endTime" column="Order_endTime" type="timestamp" />
+		<property name="Order_dealPersonID" column="Order_dealPersonID" type="java.lang.Integer"/>
+		<!-- what does decimal in mysql map to in hibernate? -->
+		<property name="Order_totalPrice" column="Order_totalPrice" type="big_decimal"/>
+		<property name="Order_status" column="Order_status" type="java.lang.Integer"/>
+		<property name="Order_notes" column="Order_notes" type="java.lang.String"/>
+		<property name="Order_buyer" column="Order_buyer" type="java.lang.String"/>
+		<property name="Order_buyerContact" column="Order_buyerContact" type="java.lang.String"/>
+		<property name="Order_buyerRepresantName" column="Order_buyerRepresantName" type="java.lang.String"/>
+	</class>
+	
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entity.ots" >
+	<class name="Ots" table="ots" >
+		<id name="Ots_id" column="Ots_id" type="java.lang.Integer" >
+			<generator class="native"/>
+		</id>
+		<property name="Category_id" column="Category_id" type="java.lang.Integer" />		
+		<property name="Category_name" column="Category_name" type="java.lang.String" />
+		<property name="Ost_name" column="Ost_name" type="java.lang.String" />
+		<property name="Ost_notes" column="Ost_notes" type="java.lang.String" />
+		<property name="Ost_remains" column="Ost_remains" type="java.lang.Integer" />
+		<property name="Ost_allowed" column="Ost_allowed" type="java.lang.Integer" />
+		<property name="Ost_isLack" column="Ost_isLack" type="java.lang.Integer" />
+	</class>
+</hibernate-mapping>

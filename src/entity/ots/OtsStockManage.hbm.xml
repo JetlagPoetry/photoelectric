@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entity.ots" >
+	<class name="OtsStockManage" table="ots_stockmanage" >
+		<id name="Ots_id" column="Ots_id" type="java.lang.Integer" >
+			<generator class="native"/>
+		</id>
+		<property name="Allocation_id" column="Allocation_id" type="java.lang.Integer" />		
+		<property name="Ots_amount" column="Ots_amount" type="java.lang.Integer" />
+		<property name="Ots_StockDealPersonID" column="Ots_StockDealPersonID" type="java.lang.Integer" />
+		<property name="Ots_takeOtsPersonID" column="Ots_takeOtsPersonID" type="java.lang.Integer" />
+		<property name="Ots_bringOtsPersonID" column="Ots_bringOtsPersonID" type="java.lang.Integer" />
+		<property name="OtsStockManage_type" column="OtsStockManage_type" type="java.lang.Integer" />
+		<property name="OtsStockmanage_id" column="OtsStockmanage_id" type="java.lang.String" />
+		<property name="Ots_Date" column="Ots_Date" type="timestamp" />
+		<property name="Repository_id" column="Repository_id" type="java.lang.Integer" />
+	</class>
+</hibernate-mapping>

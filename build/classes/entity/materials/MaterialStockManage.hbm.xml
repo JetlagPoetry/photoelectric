@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entity.materials" >
+	<class name="MaterialStockManage" table="material_stockmanage" >
+		<id name="Materials_id" column="Materials_id" type="java.lang.Integer" >
+			<generator class="native"/>
+		</id>
+		<property name="Allocation_id" column="Allocation_id" type="java.lang.Integer" />		
+		<property name="Materials_amount" column="Materials_amount" type="java.lang.Integer" />
+		<property name="Materials_StockDealPersonID" column="Materials_StockDealPersonID" type="java.lang.Integer" />
+		<property name="Materials_takeMaterialPersonID" column="Materials_takeMaterialPersonID" type="java.lang.Integer" />
+		<property name="Materials_bringMaterialPersonID" column="Materials_bringMaterialPersonID" type="java.lang.Integer" />
+		<property name="MaterialsStockManage_type" column="MaterialsStockManage_type" type="java.lang.Integer" />
+		<property name="MaterialsStockManage_id" column="MaterialsStockManage_id" type="java.lang.String" />
+		<property name="MaterialsStockManage_Date" column="MaterialsStockManage_Date" type="timestamp" />
+		<property name="Repository_id" column="Repository_id" type="java.lang.Integer" />
+	</class>
+</hibernate-mapping>
