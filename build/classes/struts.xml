@@ -4,14 +4,39 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <package name="default" namespace="/" extends="struts-default">
-		<action name="*_*" class="action.{1}Action" method="{2}" >
-			<result name="login_success">login_success.jsp</result>
-			
-			
-		</action>	
-		
-    </package>
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="*_*" class="action.{1}Action" method="{2}">
+			<!-- model.BOM -->
+			<result name="BOM_getGoodsTree_success"></result>
+			<result name="BOM_getWipListByGoodsName_success"></result>
+			<result name="BOM_getMaterialListByWipId_success"></result>
+			<result name="BOM_searchGoodsByName_success"></result>
+			<result name="BOM_addGoods_success"></result>
+			<result name="BOM_deleteGoods_success"></result>
+			<result name="BOM_modifyGoods_success"></result>
+			<result name="BOM_getAllWipList_success"></result>
+			<result name="BOM_addWip_success"></result>
+			<result name="BOM_modifyWip_success"></result>
+			<result name="BOM_deleteWip_success"></result>
+			<result name="BOM_searchWipByName_success"></result>
+			<result name="BOM_getAllMaterialList_success"></result>
+			<result name="BOM_addMaterial_success"></result>
+			<result name="BOM_modifyMaterial_success"></result>
+			<result name="BOM_deleteMaterial_success"></result>
+			<result name="BOM_searchMaterialByName_success"></result>
+			<result name="BOM_getAllCategoryList_success"></result>
+			<result name="BOM_addCategory_success"></result>
+			<result name="BOM_modifyCategory_success"></result>
+			<result name="BOM_deleteCategory_success"></result>
+			<result name="BOM_searchCategoryByName_success"></result>
+			<!-- Requisition -->
+			<result name="Requisition_getRequisitionListByOrderId_success"></result>
+			<result name="Requisition_getAllUnfinishedRequisitionList_success"></result>
+			<result name="Requisition_searchRequisitionList_success"></result>
+			<result name="Requisition_getRequisitionProductList_success"></result>
+		</action>
+
+	</package>
 
 
 </struts>
