@@ -5,12 +5,12 @@
 
 <struts>
 	<package name="default" namespace="/" extends="struts-default">
-		<action name="*_*" class="action.{1}Action" method="{2}">
-			<!-- model.BOM -->
+		<action name="*_*" class="com.Action.{1}Action" method="{2}">
+			<!-- BOM -->
 			<result name="BOM_getGoodsTree_success"></result>
 			<result name="BOM_getWipListByGoodsName_success"></result>
 			<result name="BOM_getMaterialListByWipId_success"></result>
-			<result name="BOM_searchGoodsByName_success"></result>
+			<result name="BOM_searchGoods_success"></result>
 			<result name="BOM_addGoods_success"></result>
 			<result name="BOM_deleteGoods_success"></result>
 			<result name="BOM_modifyGoods_success"></result>
@@ -18,7 +18,7 @@
 			<result name="BOM_addWip_success"></result>
 			<result name="BOM_modifyWip_success"></result>
 			<result name="BOM_deleteWip_success"></result>
-			<result name="BOM_searchWipByName_success"></result>
+			<result name="BOM_searchWip_success"></result>
 			<result name="BOM_getAllMaterialList_success"></result>
 			<result name="BOM_addMaterial_success"></result>
 			<result name="BOM_modifyMaterial_success"></result>

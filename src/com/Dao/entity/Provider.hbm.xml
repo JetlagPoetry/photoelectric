@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 7, 2017 2:26:51 AM by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.Dao.entity.Provider" table="provider" catalog="base">
+        <id name="providerId" type="int">
+            <column name="Provider_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="providerName" type="string">
+            <column name="Provider_name" length="20" not-null="true" />
+        </property>
+        <property name="providerAddress" type="string">
+            <column name="Provider_address" length="70" not-null="true" />
+        </property>
+        <property name="providerContact" type="string">
+            <column name="Provider_contact" length="20" not-null="true" />
+        </property>
+        <property name="providerPeriod" type="java.lang.Integer">
+            <column name="Provider_period" />
+        </property>
+        <set name="purchaseorders" table="purchaseorder" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Provider_id" />
+            </key>
+            <one-to-many class="entity.Purchaseorder" />
+        </set>
+        <set name="providematerialPeriods" table="providematerial_period" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Provider_id" not-null="true" />
+            </key>
+            <one-to-many class="entity.ProvidematerialPeriod" />
+        </set>
+    </class>
+</hibernate-mapping>

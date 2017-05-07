@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 7, 2017 2:26:51 AM by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.Dao.entity.Order" table="order" catalog="base">
+        <id name="orderId" type="java.lang.Integer">
+            <column name="Order_id" />
+            <generator class="identity" />
+        </id>
+        <property name="orderBeginTime" type="timestamp">
+            <column name="Order_beginTime" length="19" not-null="true" />
+        </property>
+        <property name="orderEndTime" type="timestamp">
+            <column name="Order_endTime" length="19" />
+        </property>
+        <property name="orderDealPersonId" type="int">
+            <column name="Order_dealPersonID" not-null="true" />
+        </property>
+        <property name="orderTotalPrice" type="java.lang.Long">
+            <column name="Order_totalPrice" precision="10" scale="0" />
+        </property>
+        <property name="orderStatus" type="int">
+            <column name="Order_status" not-null="true" />
+        </property>
+        <property name="orderNotes" type="string">
+            <column name="Order_notes" />
+        </property>
+        <property name="orderBuyer" type="string">
+            <column name="Order_buyer" not-null="true" />
+        </property>
+        <property name="orderBuyerContact" type="string">
+            <column name="Order_buyerContact" not-null="true" />
+        </property>
+        <property name="orderBuyerRepresantName" type="string">
+            <column name="Order_buyerRepresantName" not-null="true" />
+        </property>
+        <set name="virtualotsstores" table="virtualotsstore" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="VirtualOtsStore_OrderID" not-null="true" />
+            </key>
+            <one-to-many class="entity.Virtualotsstore" />
+        </set>
+        <set name="productsells" table="productsell" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Order_id" not-null="true" />
+            </key>
+            <one-to-many class="entity.Productsell" />
+        </set>
+        <set name="virtualwipstores" table="virtualwipstore" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="VirtualWipStore_OrderID" not-null="true" />
+            </key>
+            <one-to-many class="entity.Virtualwipstore" />
+        </set>
+    </class>
+</hibernate-mapping>

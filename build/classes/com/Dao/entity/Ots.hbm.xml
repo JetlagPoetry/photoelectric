@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 7, 2017 2:26:51 AM by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.Dao.entity.Ots" table="ots" catalog="base">
+        <id name="otsId" type="java.lang.Integer">
+            <column name="Ots_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="category" class="entity.Category" fetch="select">
+            <column name="Category_id" />
+            <column name="Category_name" length="50" />
+        </many-to-one>
+        <property name="ostName" type="string">
+            <column name="Ost_name" length="50" not-null="true" />
+        </property>
+        <property name="ostNotes" type="string">
+            <column name="Ost_notes" length="70" />
+        </property>
+        <property name="ostRemains" type="int">
+            <column name="Ost_remains" not-null="true" />
+        </property>
+        <property name="ostAllowed" type="int">
+            <column name="Ost_allowed" not-null="true" />
+        </property>
+        <property name="ostIsLack" type="short">
+            <column name="Ost_isLack" not-null="true" />
+        </property>
+        <set name="productsells" table="productsell" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Ots_id" not-null="true" />
+            </key>
+            <one-to-many class="entity.Productsell" />
+        </set>
+        <set name="virtualotsstores" table="virtualotsstore" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="VirtualOtsStore_OtsID" not-null="true" />
+            </key>
+            <one-to-many class="entity.Virtualotsstore" />
+        </set>
+        <set name="categories" table="ots_category" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Ots_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="entity.Category">
+                <column name="Category_id" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="otsstores" table="otsstore" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="OtsStore_OtsID" not-null="true" />
+            </key>
+            <one-to-many class="entity.Otsstore" />
+        </set>
+        <set name="wipOtses" table="wip_ots" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Ots_id" not-null="true" />
+            </key>
+            <one-to-many class="entity.WipOts" />
+        </set>
+        <set name="otsStockmanages" table="ots_stockmanage" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Ots_id" not-null="true" />
+            </key>
+            <one-to-many class="entity.OtsStockmanage" />
+        </set>
+    </class>
+</hibernate-mapping>

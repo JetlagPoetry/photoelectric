@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 7, 2017 2:26:51 AM by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.Dao.entity.Storelog" table="storelog" catalog="base">
+        <id name="logId" type="java.lang.Integer">
+            <column name="Log_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="repository" class="entity.Repository" fetch="select">
+            <column name="Repository_id" />
+        </many-to-one>
+        <many-to-one name="staff" class="entity.Staff" fetch="select">
+            <column name="Log_StockDealPersonID" />
+        </many-to-one>
+        <property name="logAmount" type="java.lang.Integer">
+            <column name="Log_amount" />
+        </property>
+        <property name="logStockManageType" type="java.lang.Integer">
+            <column name="Log_StockManage_type" />
+        </property>
+        <property name="logType" type="java.lang.Integer">
+            <column name="Log_Type" />
+        </property>
+        <property name="logDate" type="timestamp">
+            <column name="Log_Date" length="19" />
+        </property>
+        <property name="logOrderid" type="string">
+            <column name="Log_Orderid" length="12" />
+        </property>
+    </class>
+</hibernate-mapping>

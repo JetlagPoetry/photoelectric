@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 7, 2017 2:26:51 AM by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.Dao.entity.Staff" table="staff" catalog="base">
+        <id name="staffId" type="java.lang.Integer">
+            <column name="Staff_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="department" class="entity.Department" fetch="select">
+            <column name="Staff_department" />
+        </many-to-one>
+        <many-to-one name="station" class="entity.Station" fetch="select">
+            <column name="Staff_station" />
+        </many-to-one>
+        <property name="staffName" type="string">
+            <column name="Staff_name" not-null="true" />
+        </property>
+        <property name="staffGender" type="string">
+            <column name="Staff_gender" />
+        </property>
+        <property name="staffTitle" type="string">
+            <column name="Staff_title" not-null="true" />
+        </property>
+        <property name="staffContact" type="string">
+            <column name="Staff_contact" not-null="true" />
+        </property>
+        <property name="staffPriority" type="int">
+            <column name="Staff_priority" not-null="true" />
+        </property>
+        <set name="storelogs" table="storelog" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Log_StockDealPersonID" />
+            </key>
+            <one-to-many class="entity.Storelog" />
+        </set>
+        <set name="materialStockmanages" table="material_stockmanage" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Materials_StockDealPersonID" />
+            </key>
+            <one-to-many class="entity.MaterialStockmanage" />
+        </set>
+        <set name="otsStockmanages" table="ots_stockmanage" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Ots_StockDealPersonID" />
+            </key>
+            <one-to-many class="entity.OtsStockmanage" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 7, 2017 2:26:51 AM by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.Dao.entity.WipStockmanage" table="wip_stockmanage" catalog="base">
+        <id name="wipStockManageId" type="string">
+            <column name="WipStockManage_ID" length="12" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="allocation" class="entity.Allocation" fetch="select">
+            <column name="Allocation_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="repository" class="entity.Repository" fetch="select">
+            <column name="Repository_id" />
+        </many-to-one>
+        <many-to-one name="wip" class="entity.Wip" fetch="select">
+            <column name="Wip_id" not-null="true" />
+        </many-to-one>
+        <property name="wipAmount" type="int">
+            <column name="Wip_amount" not-null="true" />
+        </property>
+        <property name="wipStockDealPersonId" type="int">
+            <column name="Wip_StockDealPersonID" not-null="true" />
+        </property>
+        <property name="wipTakePersonId" type="int">
+            <column name="Wip_takePersonID" not-null="true" />
+        </property>
+        <property name="wipStockManageType" type="int">
+            <column name="WipStockManage_type" not-null="true" />
+        </property>
+        <property name="wipBringPersonId" type="java.lang.Integer">
+            <column name="Wip_bringPersonID" />
+        </property>
+        <property name="wipStockManageDate" type="timestamp">
+            <column name="WipStockManage_Date" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

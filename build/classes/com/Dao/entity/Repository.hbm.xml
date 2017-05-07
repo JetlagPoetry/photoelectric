@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 7, 2017 2:26:51 AM by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.Dao.entity.Repository" table="repository" catalog="base">
+        <id name="repositoryId" type="java.lang.Integer">
+            <column name="Repository_id" />
+            <generator class="identity" />
+        </id>
+        <property name="repositoryAddress" type="string">
+            <column name="Repository_address" length="30" not-null="true" />
+        </property>
+        <property name="repositoryManageId" type="java.lang.Integer">
+            <column name="Repository_manageID" />
+        </property>
+        <set name="otsStockmanages" table="ots_stockmanage" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Repository_id" />
+            </key>
+            <one-to-many class="entity.OtsStockmanage" />
+        </set>
+        <set name="virtualotsstores" table="virtualotsstore" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="VirtualOtsStore_RepositoryID" not-null="true" />
+            </key>
+            <one-to-many class="entity.Virtualotsstore" />
+        </set>
+        <set name="materialGets" table="material_get" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="StationGetMaterials_location" />
+            </key>
+            <one-to-many class="entity.MaterialGet" />
+        </set>
+        <set name="storelogs" table="storelog" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Repository_id" />
+            </key>
+            <one-to-many class="entity.Storelog" />
+        </set>
+        <set name="wipGets" table="wip_get" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="StationGetWip _location" />
+            </key>
+            <one-to-many class="entity.WipGet" />
+        </set>
+        <set name="allocations" table="allocation" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Repository_id" not-null="true" />
+            </key>
+            <one-to-many class="entity.Allocation" />
+        </set>
+        <set name="otsstores" table="otsstore" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="OtsStore_RepositoryID" not-null="true" />
+            </key>
+            <one-to-many class="entity.Otsstore" />
+        </set>
+        <set name="wipStockmanages" table="wip_stockmanage" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Repository_id" />
+            </key>
+            <one-to-many class="entity.WipStockmanage" />
+        </set>
+        <set name="virtualwipstores" table="virtualwipstore" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="VirtualWipStore_RepositoryID" not-null="true" />
+            </key>
+            <one-to-many class="entity.Virtualwipstore" />
+        </set>
+        <set name="materialsstores" table="materialsstore" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="MaterialsStore_ RepositoryID" />
+            </key>
+            <one-to-many class="entity.Materialsstore" />
+        </set>
+        <set name="wipstores" table="wipstore" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="WipStore _ RepositoryID" />
+            </key>
+            <one-to-many class="entity.Wipstore" />
+        </set>
+        <set name="materialStockmanages" table="material_stockmanage" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Repository_id" />
+            </key>
+            <one-to-many class="entity.MaterialStockmanage" />
+        </set>
+    </class>
+</hibernate-mapping>

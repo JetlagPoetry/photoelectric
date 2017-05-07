@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 7, 2017 2:26:51 AM by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.Dao.entity.MaterialStockmanage" table="material_stockmanage" catalog="base">
+        <id name="materialsStockManageId" type="string">
+            <column name="MaterialsStockManage_id" length="12" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="materials" class="entity.Materials" fetch="select">
+            <column name="Materials_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="staff" class="entity.Staff" fetch="select">
+            <column name="Materials_StockDealPersonID" />
+        </many-to-one>
+        <many-to-one name="allocation" class="entity.Allocation" fetch="select">
+            <column name="Allocation_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="repository" class="entity.Repository" fetch="select">
+            <column name="Repository_id" />
+        </many-to-one>
+        <property name="materialsAmount" type="java.lang.Integer">
+            <column name="Materials_amount" />
+        </property>
+        <property name="materialsTakeMaterialPersonId" type="java.lang.Integer">
+            <column name="Materials_takeMaterialPersonID" />
+        </property>
+        <property name="materialsBringMaterialPersonId" type="java.lang.Integer">
+            <column name="Materials_bringMaterialPersonID" />
+        </property>
+        <property name="materialsStockManageType" type="java.lang.Integer">
+            <column name="MaterialsStockManage_type" />
+        </property>
+        <property name="materialsStockManageDate" type="timestamp">
+            <column name="MaterialsStockManage_Date" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

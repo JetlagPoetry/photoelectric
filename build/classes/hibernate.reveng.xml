@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="base" match-name="allocation"/>
+  <table-filter match-catalog="base" match-name="category"/>
+  <table-filter match-catalog="base" match-name="department"/>
+  <table-filter match-catalog="base" match-name="material_get"/>
+  <table-filter match-catalog="base" match-name="material_stockmanage"/>
+  <table-filter match-catalog="base" match-name="materials"/>
+  <table-filter match-catalog="base" match-name="materials_wip"/>
+  <table-filter match-catalog="base" match-name="materialsstore"/>
+  <table-filter match-catalog="base" match-name="order"/>
+  <table-filter match-catalog="base" match-name="ots"/>
+  <table-filter match-catalog="base" match-name="ots_category"/>
+  <table-filter match-catalog="base" match-name="ots_stockmanage"/>
+  <table-filter match-catalog="base" match-name="otsstore"/>
+  <table-filter match-catalog="base" match-name="productsell"/>
+  <table-filter match-catalog="base" match-name="providematerial_period"/>
+  <table-filter match-catalog="base" match-name="provider"/>
+  <table-filter match-catalog="base" match-name="purchaseorder"/>
+  <table-filter match-catalog="base" match-name="repository"/>
+  <table-filter match-catalog="base" match-name="staff"/>
+  <table-filter match-catalog="base" match-name="staff_station"/>
+  <table-filter match-catalog="base" match-name="station"/>
+  <table-filter match-catalog="base" match-name="storelog"/>
+  <table-filter match-catalog="base" match-name="virtualmaterialsstore"/>
+  <table-filter match-catalog="base" match-name="virtualotsstore"/>
+  <table-filter match-catalog="base" match-name="virtualwipstore"/>
+  <table-filter match-catalog="base" match-name="wip"/>
+  <table-filter match-catalog="base" match-name="wip_get"/>
+  <table-filter match-catalog="base" match-name="wip_ots"/>
+  <table-filter match-catalog="base" match-name="wip_stockmanage"/>
+  <table-filter match-catalog="base" match-name="wipstore"/>
+</hibernate-reverse-engineering>

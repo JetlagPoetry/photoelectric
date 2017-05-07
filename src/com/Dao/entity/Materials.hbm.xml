@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 7, 2017 2:26:51 AM by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.Dao.entity.Materials" table="materials" catalog="base">
+        <id name="materialsId" type="java.lang.Integer">
+            <column name="Materials_id" />
+            <generator class="identity" />
+        </id>
+        <property name="materialsName" type="string">
+            <column name="Materials_name" length="50" not-null="true" />
+        </property>
+        <property name="materialsNotes" type="string">
+            <column name="Materials_notes" length="70" />
+        </property>
+        <property name="materialsMinPur" type="java.lang.Integer">
+            <column name="Materials_minPur" />
+        </property>
+        <property name="materialsIsLack" type="java.lang.Short">
+            <column name="Materials_isLack" />
+        </property>
+        <property name="materialsRemains" type="java.lang.Integer">
+            <column name="Materials_remains" />
+        </property>
+        <property name="materialsAllowed" type="java.lang.Integer">
+            <column name="Materials_allowed" />
+        </property>
+        <set name="materialGets" table="material_get" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Materials_id" not-null="true" />
+            </key>
+            <one-to-many class="entity.MaterialGet" />
+        </set>
+        <set name="materialsWips" table="materials_wip" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Materials_id" not-null="true" />
+            </key>
+            <one-to-many class="entity.MaterialsWip" />
+        </set>
+        <set name="purchaseorders" table="purchaseorder" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Materials_id" />
+            </key>
+            <one-to-many class="entity.Purchaseorder" />
+        </set>
+        <set name="providematerialPeriods" table="providematerial_period" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Materials_id" not-null="true" />
+            </key>
+            <one-to-many class="entity.ProvidematerialPeriod" />
+        </set>
+        <set name="materialStockmanages" table="material_stockmanage" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Materials_id" not-null="true" />
+            </key>
+            <one-to-many class="entity.MaterialStockmanage" />
+        </set>
+        <set name="materialsstores" table="materialsstore" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="MaterialsStore _ MaterialsID" />
+            </key>
+            <one-to-many class="entity.Materialsstore" />
+        </set>
+    </class>
+</hibernate-mapping>

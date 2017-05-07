@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 7, 2017 2:26:51 AM by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.Dao.entity.WipOts" table="wip_ots" catalog="base">
+        <composite-id name="id" class="entity.WipOtsId">
+            <key-property name="wipId" type="int">
+                <column name="Wip_id" />
+            </key-property>
+            <key-property name="otsId" type="int">
+                <column name="Ots_id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="ots" class="entity.Ots" update="false" insert="false" fetch="select">
+            <column name="Ots_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="wip" class="entity.Wip" update="false" insert="false" fetch="select">
+            <column name="Wip_id" not-null="true" />
+        </many-to-one>
+        <property name="wipNum" type="java.lang.Integer">
+            <column name="Wip_num" />
+        </property>
+    </class>
+</hibernate-mapping>

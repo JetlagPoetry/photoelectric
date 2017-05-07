@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 7, 2017 2:26:51 AM by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.Dao.entity.Productsell" table="productsell" catalog="base">
+        <composite-id name="id" class="entity.ProductsellId">
+            <key-property name="otsId" type="int">
+                <column name="Ots_id" />
+            </key-property>
+            <key-property name="orderId" type="int">
+                <column name="Order_id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="ots" class="entity.Ots" update="false" insert="false" fetch="select">
+            <column name="Ots_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="order" class="entity.Order" update="false" insert="false" fetch="select">
+            <column name="Order_id" not-null="true" />
+        </many-to-one>
+        <property name="productSellAmount" type="java.lang.Integer">
+            <column name="ProductSell_amount" />
+        </property>
+    </class>
+</hibernate-mapping>
